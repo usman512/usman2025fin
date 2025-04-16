@@ -392,14 +392,13 @@ var pageNFErr = 0;
 		function valid_email(email) {
  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
-	
+	}
 	$(document).ready(function(){
 	alert('c');
 		if(pageNFErr == 1) {
 			showError();
 			pageNFErr = 0;
 		}
-}
 	$('.hamburger').click(function(){
 	alert('c');
 		if($('.hamburger').hasClass('is-active')) {
@@ -429,7 +428,7 @@ var pageNFErr = 0;
 <div class="navBarWrap">
 <div class="navBarLeft">
 <a href="index">
-<img src="images/logo1G.png">
+<img src="images/Logo1G.png">
 </a>
 </div>
 <div class="navBarRight">
