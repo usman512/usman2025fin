@@ -394,13 +394,11 @@ var pageNFErr = 0;
     return re.test(email);
 	}
 	$(document).ready(function(){
-	alert('c');
 		if(pageNFErr == 1) {
 			showError();
 			pageNFErr = 0;
 		}
 	$('.hamburger').click(function(){
-	alert('c');
 		if($('.hamburger').hasClass('is-active')) {
 			$('.hamburger').removeClass('is-active');
 			$('.navMenu').removeClass('navMenuOpen');
