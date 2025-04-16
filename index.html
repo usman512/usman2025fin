@@ -347,6 +347,70 @@ navMenuWrap a:hover::before {
     margin-left: auto;
     margin-right: auto;
 }
+footer.footerContainer {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 415px;
+    bottom: 0;
+    z-index: 1;
+    background-color: #97dc21;
+}
+.footerWrap {
+    display: block;
+    overflow: hidden;
+}
+.footerWrap > div {
+    display: inline-block;
+    overflow: hidden;
+    width: 50%;
+    float: left;
+    padding: 0 7px;
+}
+.footerWrap > div > * {
+    display: block;
+    overflow: hidden;
+    color: #000000;
+}
+.footerWrap > div > img {
+    width: 195px;
+    margin-bottom: 15px;
+    margin-top: 1em;
+}
+.footerWrap > div > span {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    margin-bottom: 7px;
+}
+.footerWrap > div > span > a {
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+.footerWrap > div > span > a > i {
+    font-size: 16px;
+    margin-right: 7px;
+}
+.footerWrap > div > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    overflow: hidden;
+}
+.footerWrap > div > ul > li {
+    display: block;
+    text-rendering: optimizeLegibility;
+    margin-top: 8px;
+}
+.footerWrap > div > ul > li > a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
 @media (max-width:768px) {
 	.navBarLeft, .navBarRight {
 		padding: 0px 15px;
