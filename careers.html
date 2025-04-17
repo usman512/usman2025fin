@@ -589,6 +589,16 @@ var pageNFErr = 0;
 	background-repeat: no-repeat;
 	margin: 0 10px;
 }
+.formVidWrap > div {
+    display: inline-block;
+    width: 50%;
+    overflow: hidden;
+    float: left;
+    padding: 60px 30px;
+}
+.vidCont video {
+    width: 100%;
+}
 .messageSendTitle {
     font-weight: 400;
     font-size: 24px;
@@ -617,7 +627,7 @@ var pageNFErr = 0;
 	border-bottom: 1px solid #97dc21;
 }
 span.submitMessageButton {
-    border: 1px solid #FFFFFF;
+    border: 1px solid #97dc21;
     padding: 10px 12px;
     cursor: pointer;
     font-size: 14px;
@@ -808,7 +818,7 @@ At J&amp;J Fundforce, we don’t just knock on doors—we level up every day. Wh
 <div class="formVidWrap">
 <div class="vidCont">
 <div>
-<video autoplay muted>
+<video autoplay muted controls loop>
   <source src="images/officeVid.mp4" type="video/mp4">
 </video>
 </div>
