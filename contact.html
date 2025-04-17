@@ -506,6 +506,11 @@ var pageNFErr = 0;
 .mainHeroContainer {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0.85) 100%), url(images/indexbg.jpg) no-repeat center center fixed;
 }
+.firstConCont {
+    display: block;
+    Overflow: hidden;
+    margin-top: 60px;
+}
 .firstConLeft, .firstConRight, .mapContainer {
     display: block;
     overflow: hidden;
@@ -524,8 +529,78 @@ var pageNFErr = 0;
     overflow: hidden;
     float: left;
 }
+.firstConLeft > div > * {
+    display: block;
+    overflow: hidden;
+}
+.firstConLeft h3 {
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+.firstConLeft p {
+    font-weight: 300;
+    font-size: 16px;
+	margin-bottom: 10px;
+}
+.firstConLeft span {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 300;
+}
 .firstConRight {
 	background-color: #97dc21;
+}
+.messageInputContainer, .messageSendTitle {
+    display: block;
+    overflow: hidden;
+}
+span.messageSendTitle {
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.firstConRight input, .firstConRight textarea {
+    border: 0;
+    border-bottom: 1px solid #9C9C9C;
+    width: 100%;
+    padding: 1px 0px 5px 2px;
+    font-size: 12px;
+    margin: 5px 0;
+    margin-bottom: 8px;
+    box-shadow: none;
+    outline: none;
+    appearance: none;
+    color: #555555;
+    transition: border 0.4s ease-in-out;
+    background-color: #ffffff;
+}
+.firstConRight textarea {
+    min-height: 70px;
+}
+span.submitMessageButton {
+    border: 1px solid #FFFFFF;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #97dc21;
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+    margin-top: 5px;
+    background-color: #FFFFFF;
+	position: relative;
+}
+span.submitMessageButton:hover {
+    color: #FFFFFF;
+    background-color: #97dc21;
+}
+
+span.submitMessageButton:active {
+    top: 1px;
 }
 .mapContainer iframe {
     width: 100%;
@@ -586,7 +661,7 @@ var pageNFErr = 0;
 <div>
 <h3>GET IN TOUCH WITH OUR TEAM</h3>
 <p>Call, email or drop by and pay us a visit!</p>
-<span class="contactAddress">123 main St</span>
+<span class="contactAddress"><b>Address: </b>123 main St</span>
 <span class="contactPhone"><b>Phone: </b><a href="tel:1234567890">123-456-7890</a></span>
 <span class="contactEmail"><b>Email: </b><a href="mailto:jjfundforce@gmail.com ">jjfundforce@gmail.com </a></span>
 <span class="contactSocial">
@@ -620,7 +695,7 @@ var pageNFErr = 0;
 <div class="footerWrap">
 <div class="footerOneHalf">
 <img src="images/Logo1W.png">
-<span class="footerAddress">123 main St</span>
+<span class="footerAddress"><b>Address: </b>123 main St</span>
 <span class="footerPhone"><b>Phone: </b><a href="tel:1234567890">123-456-7890</a></span>
 <span class="footerEmail"><b>Email: </b><a href="mailto:jjfundforce@gmail.com ">jjfundforce@gmail.com </a></span>
 <span class="footerSocial">
