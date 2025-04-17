@@ -302,25 +302,11 @@ html, body {
     display: block;
     overflow: hidden;
 }
-.activateFade {
-	animation-name: fadeIn;
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-	transform: translate(-100px);
-  }
-  
-  to {
-    opacity: 1;
-	transform: translate(0px);
-  }
-}
-navMenuWrap a {
+navMenuWrap > ul > li > a {
   position: relative;
 }
 
-navMenuWrap a::before {
+navMenuWrap > ul > li > a::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -333,9 +319,8 @@ navMenuWrap a::before {
     transform: scaleX(0);
     transition: transform .3s ease-in-out;
   }
-
-navMenuWrap a:hover::before {
-  transform-origin: left;
+navMenuWrap > ul > li > a:hover::before {
+ transform-origin: left;
   transform: scaleX(1);
 }
 .navBarWrap, .navMenuWrap, .mainHeroWrap, .footerWrap {
@@ -617,7 +602,7 @@ var pageNFErr = 0;
 <nav class="navBar">
 <div class="navBarWrap">
 <div class="navBarLeft">
-<a href="index">
+<a href="index.html">
 <img src="images/Logo1G.png">
 </a>
 </div>
@@ -635,9 +620,9 @@ var pageNFErr = 0;
 <div class="navMenu">
 <div class="navMenuWrap">
 <ul>
-<li><a href="index">Home</a></li>
-<li><a href="careers">Careers</a></li>
-<li><a href="contact">Contact</a></li>
+<li><a href="index.html">Home</a></li>
+<li><a href="careers.html">Careers</a></li>
+<li><a href="contact.html">Contact</a></li>
 </ul>
 </div>
 </div>
@@ -777,7 +762,7 @@ At J&amp;J Fundforce, we don’t just knock on doors—we level up every day. Wh
 <div class="footerWrap">
 <div class="footerOneHalf">
 <img src="images/Logo1W.png">
-<span class="footerAddress">123 main St</span>
+<span class="footerAddress"><b>Address: </b>123 main St</span>
 <span class="footerPhone"><b>Phone: </b><a href="tel:1234567890">123-456-7890</a></span>
 <span class="footerEmail"><b>Email: </b><a href="mailto:jjfundforce@gmail.com ">jjfundforce@gmail.com </a></span>
 <span class="footerSocial">
