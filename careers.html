@@ -589,6 +589,55 @@ var pageNFErr = 0;
 	background-repeat: no-repeat;
 	margin: 0 10px;
 }
+.messageSendTitle {
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.formCont input, .formCont textarea {
+    border: 0;
+    border-bottom: 1px solid #9C9C9C;
+    width: 100%;
+    padding: 1px 0px 5px 2px;
+    font-size: 12px;
+    margin: 5px 0;
+    margin-bottom: 8px;
+    box-shadow: none;
+    outline: none;
+    appearance: none;
+    color: #555555;
+    transition: border 0.4s ease-in-out;
+}
+.formCont textarea {
+    min-height: 70px;
+}
+.formCont input:focus, .formCont textarea:focus {
+	border: 0;
+	border-bottom: 1px solid #97dc21;
+}
+span.submitMessageButton {
+    border: 1px solid #FFFFFF;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #97dc21;
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+    margin-top: 5px;
+    background-color: #FFFFFF;
+	position: relative;
+}
+span.submitMessageButton:hover {
+    color: #FFFFFF;
+    background-color: #97dc21;
+}
+
+span.submitMessageButton:active {
+    top: 1px;
+}
 @media (max-width:768px) {
     .whyContainer {
 		margin-top: 0px;
