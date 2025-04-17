@@ -302,20 +302,6 @@ html, body {
     display: block;
     overflow: hidden;
 }
-.activateFade {
-	animation-name: fadeIn;
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-	transform: translate(-100px);
-  }
-  
-  to {
-    opacity: 1;
-	transform: translate(0px);
-  }
-}
 navMenuWrap a {
   position: relative;
 }
@@ -620,7 +606,79 @@ span.submitMessageButton:active {
 	}
 }
 </style>
+<script>
 
+$(document).ready(function(){
+	$('.submitMessageButton').click(function(){
+		var nameVal = $('.inputName').val();
+		var emailVal = $('.inputEmail').val();
+		var subjectVal = $('.inputSubject').val();
+		var bodyVal = $('.inputMessage').val();
+		if(($.trim(nameVal).length) > 1) {
+			if(($.trim(emailVal).length) > 3) {
+				if(valid_email(emailVal)) {
+					if(($.trim(subjectVal).length) > 2) {
+						if(($.trim(bodyVal).length) > 4) {
+							$.ajax({
+								type: "POST",
+								url: "sendEmail",
+								data: { "ename" : nameVal, "eemail" : emailVal, "esubj" : subjectVal, "emsg" : bodyVal },
+								success: function(result) {
+									if(result == 'gd') {
+										$('body').prepend('<div class="alertMessage alert alert-success fade in show"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Thanks! We\'ll reply to you asap.</div>');
+										$('.alertMessage').delay(5000).fadeOut();
+										$('.inputName').val('');
+										$('.inputEmail').val('');
+										$('.inputSubject').val('');
+										$('.inputMessage').val('');
+									} else if(result == 'bml') {
+										$('body').prepend('<div class="alertMessage alert alert-danger fade in show"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Sorry, we encountered an error. Please try again.</div>');
+										$('.alertMessage').delay(3000).fadeOut();
+									} else if(result == 'bms') {
+										$('body').prepend('<div class="alertMessage alert alert-warning fade in show"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Please enter a message!</div>');
+										$('.alertMessage').delay(3000).fadeOut();
+									} else if(result == 'bsj') {
+										$('body').prepend('<div class="alertMessage alert alert-warning fade in show"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Please enter a subject!</div>');
+										$('.alertMessage').delay(3000).fadeOut();
+									} else if(result == 'bem') {
+										$('body').prepend('<div class="alertMessage alert alert-warning fade in show"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Please enter a valid email address!</div>');
+										$('.alertMessage').delay(3000).fadeOut();
+									} else if(result == 'bnm') {
+										$('body').prepend('<div class="alertMessage alert alert-warning fade in show"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Please enter your name!</div>');
+										$('.alertMessage').delay(3000).fadeOut();
+									} else {
+										$('body').prepend('<div class="alertMessage alert alert-danger fade in show"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Sorry, we encountered an error. Please try again.</div>');
+										$('.alertMessage').delay(3000).fadeOut();
+									}
+								}, error: function() {
+									$('body').prepend('<div class="alertMessage alert alert-danger fade in show"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Sorry, we encountered an error. Please try again.</div>');
+									$('.alertMessage').delay(3000).fadeOut();
+								}	
+							});
+						} else {
+							$('body').prepend('<div class="alertMessage alert alert-warning fade in show"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Please enter a message!</div>');
+							$('.alertMessage').delay(3000).fadeOut();
+						}
+					} else {
+						$('body').prepend('<div class="alertMessage alert alert-warning fade in show"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Please enter a subject!</div>');
+						$('.alertMessage').delay(3000).fadeOut();
+					}
+				} else {
+					$('body').prepend('<div class="alertMessage alert alert-warning fade in show"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Please enter a valid email address!</div>');
+					$('.alertMessage').delay(3000).fadeOut();
+				}
+			} else {
+				$('body').prepend('<div class="alertMessage alert alert-warning fade in show"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Please enter your email address!</div>');
+				$('.alertMessage').delay(3000).fadeOut();
+			}
+		} else {
+			$('body').prepend('<div class="alertMessage alert alert-warning fade in show"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>Please enter your name!</div>');
+			$('.alertMessage').delay(3000).fadeOut();
+		}
+	});
+});
+
+</script>
 </head>
 <body>
 <!-- START HEADER PHP FILE-->
@@ -628,7 +686,7 @@ span.submitMessageButton:active {
 <nav class="navBar">
 <div class="navBarWrap">
 <div class="navBarLeft">
-<a href="index">
+<a href="index.html">
 <img src="images/Logo1G.png">
 </a>
 </div>
@@ -646,9 +704,9 @@ span.submitMessageButton:active {
 <div class="navMenu">
 <div class="navMenuWrap">
 <ul>
-<li><a href="index">Home</a></li>
-<li><a href="careers">Careers</a></li>
-<li><a href="contact">Contact</a></li>
+<li><a href="index.html">Home</a></li>
+<li><a href="careers.html">Careers</a></li>
+<li><a href="contact.html">Contact</a></li>
 </ul>
 </div>
 </div>
@@ -718,9 +776,9 @@ span.submitMessageButton:active {
 </div>
 <div class="footerTwoHalf">
 <ul>
-<li><a href="index">Home</a></li>
-<li><a href="careers">Careers</a></li>
-<li><a href="contact">Contact</a></li>
+<li><a href="index.html">Home</a></li>
+<li><a href="careers.html">Careers</a></li>
+<li><a href="contact.html">Contact</a></li>
 <li><span class="footerCopy">©2025 J&amp;J Fundforce</span></li>
 </ul>
 </div>
