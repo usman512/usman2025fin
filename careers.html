@@ -502,11 +502,6 @@ var pageNFErr = 0;
 .whyContainer {
     margin-top: 60px;
 }
-.whyWrap, .gamingWrap, .charityWrap, {
-	max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
-}
 .whyWrap, .gamingWrap {
     overflow: hidden;
     display: flex;
@@ -650,6 +645,11 @@ span.submitMessageButton:hover {
 span.submitMessageButton:active {
     top: 1px;
 }
+.whyWrap, .gamingWrap, .charityWrap, .formVidWrap {
+	max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
 @media (max-width:768px) {
     .whyContainer {
 		margin-top: 0px;
@@ -675,8 +675,8 @@ span.submitMessageButton:active {
     display: block;
     width: 100%;
 }
-formCont {
-padding-top: 0px;
+.formCont {
+	padding-top: 0px !important;
 }
 }
 </style>
